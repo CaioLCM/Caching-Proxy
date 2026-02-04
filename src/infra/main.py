@@ -1,4 +1,4 @@
-from .server.connection import redisConnection
+from .cache.connection import redisConnection
 from .server.functions.main import search_server_cache, cache_server_response
 
 class ProxyExecutor:
@@ -13,7 +13,6 @@ class ProxyExecutor:
         if cached_response:
             return cached_response
         # Here you would normally fetch the response from the actual server
-        
         response = f"Response from {server_name}"
         cache_server_response(server_name, response, self.r)
         return response

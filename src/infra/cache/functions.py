@@ -1,5 +1,5 @@
 import redis
-from ..connection import redisConnection
+from .connection import redisConnection
 
 def search_server_cache(server_name: str, r: redis.Redis) -> str | None:
     """
